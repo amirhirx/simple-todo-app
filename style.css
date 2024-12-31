@@ -24,6 +24,7 @@ h1{
     outline: none;
     border: none;
     border-radius: 0.25rem;
+    font-size: 1em;
 }
 .task-list{
     margin: 2.5rem 0;
