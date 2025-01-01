@@ -24,7 +24,7 @@ function addTodo(text) {
 function renderTodoList(list) {
     taskList.innerHTML = ""
     list.forEach((item) => {
-        taskList.insertAdjacentHTML("beforeend", `<li><p>${item.title}</p><div><button class="status-btn">انجام شد</button><button class="remove-btn">حذف</button></div></li>`
+        taskList.insertAdjacentHTML("beforeend", `<li><p>${item.title}</p><div><button class="status-btn"><i class="fas fa-check"></i></button><button class="remove-btn"><i class="fas fa-times"></i></button></div></li>`
         )
     });
 }
