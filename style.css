@@ -65,6 +65,13 @@ h1{
 .remove-btn{
     background: rgb(177, 22, 22);
 }
+.empty-list{
+    width: max-content;
+    margin: 0 auto;
+}
+.empty-list h2{
+    margin: 5px 0;
+}
 @media screen and (max-width:700px) {
     .container{
         width: 80%;
