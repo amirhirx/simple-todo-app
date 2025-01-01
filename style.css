@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: vazirmatn, sans-serif;
 }
+@font-face {
+    font-family: vazirmatn;
+    src: url("./assets/fonts/Vazirmatn-RD[wght].ttf");
+}
 body{
     direction: rtl;
     background: #fefefe;
