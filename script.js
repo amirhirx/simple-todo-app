@@ -1,6 +1,7 @@
 const $ = document
 const taskInput = $.querySelector(".task-input")
 const taskList = $.querySelector(".task-list")
+const taskAddButton = $.querySelector(".task-input-btn")
 
 let todo = []
 
@@ -11,6 +12,12 @@ taskInput.addEventListener("keyup", (key) => {
         taskInput.value = ""
         renderTodoList(todo)
     }
+})
+
+taskAddButton.addEventListener("click", ()=>{
+    addTodo(taskInput.value)
+    taskInput.value = ""
+    renderTodoList(todo)
 })
 // Add task to todo
 function addTodo(text) {
