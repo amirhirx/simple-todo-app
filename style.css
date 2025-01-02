@@ -79,32 +79,14 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
 }
-
-.status-btn,
-.remove-btn {
-    width: 2rem;
-    height: 2rem;
-    margin: 0 0.25rem;
-    padding: 0.25rem;
+.task-list li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.task-list li div i, .task-list li div p{
+    margin: 0 0.5rem;
     font-size: 1.1em;
-    font-weight: 600;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
-    transition: 0.3s all;
-}
-
-.status-btn:active,
-.remove-btn:active {
-    scale: 0.9;
-}
-
-.status-btn {
-    background: rgb(28, 128, 41);
-}
-
-.remove-btn {
-    background: rgb(202, 28, 28);
 }
 
 .empty-list {

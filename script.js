@@ -14,7 +14,7 @@ taskInput.addEventListener("keyup", (key) => {
     }
 })
 
-taskAddButton.addEventListener("click", ()=>{
+taskAddButton.addEventListener("click", () => {
     addTodo(taskInput.value)
     taskInput.value = ""
     renderTodoList(todo)
@@ -31,7 +31,7 @@ function addTodo(text) {
 function renderTodoList(list) {
     taskList.innerHTML = ""
     list.forEach((item) => {
-        taskList.insertAdjacentHTML("beforeend", `<li><p>${item.title}</p><div><button class="status-btn"><i class="fas fa-check"></i></button><button class="remove-btn"><i class="fas fa-times"></i></button></div></li>`
+        taskList.insertAdjacentHTML("beforeend", `<li><div><i class="far fa-square"></i><p>${item.title}</p></div><div><i class="fas fa-pen"></i><i class="fas fa-trash"></i></div></li>`
         )
     });
 }
