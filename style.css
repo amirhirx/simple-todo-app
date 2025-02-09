@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: vazirmatn, sans-serif;
+}
+
+body {
+    direction: rtl;
+    background: #ededed;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+button {
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    background: #d4d3d3;
+    font-size: 1em;
+    transition: 0.1s;
+}
+
+button:active {
+    scale: 1.05;
+}
+
+header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
