@@ -12,14 +12,15 @@ body {
 
 h1 {
     font-weight: 900;
+    font-size: 1.6em;
 }
 
 button {
     border: none;
-    padding: 0.5rem 1.5rem;
+    padding: 0.25rem 1.25rem;
     border-radius: 0.25rem;
     background: #d4d3d3;
-    font-size: 1em;
+    font-size: 0.9em;
     transition: 0.1s;
 }
 
@@ -33,4 +34,94 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
+}
+
+.blur {
+    filter: blur(25px);
+}
+
+.show {
+    transform: translateY(0) !important;
+}
+
+/* New task popup styles */
+.popup {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+    transform: translateY(-100%);
+}
+
+.popup>div {
+    width: 28rem;
+    max-width: 80%;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+}
+
+.popup>div h2 {
+    text-align: center;
+    font-weight: 800;
+}
+
+.input-div {
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-div label {
+    margin: 0.5rem 0 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.input-div input,
+.input-div textarea {
+    padding: 0.25rem;
+    outline: none;
+    border: 1px solid #b6b6b6;
+    border-radius: 0.25rem;
+}
+
+.input-div textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 3rem;
+    max-height: 8rem;
+}
+
+.button-div {
+    margin: 0.5rem 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button-div button {
+    margin: 0 0.25rem;
+}
+
+/* Message popup styles */
+#message-popup>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#message-popup>div h2 {
+    text-align: right;
+}
+
+#message-popup>div button,
+#message-popup>div p {
+    margin-top: 0.5rem;
 }

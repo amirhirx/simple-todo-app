@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+    <div id="message-popup" class="popup">
         <div>
-            <h1>لیست کارها</h1>
+            <h2 id="message-popup-title"></h2>
+            <p id="message-popup-text"></p>
+            <button id="message-popup-btn">فهمیدم!</button>
         </div>
+    </div>
+    <div id="new-task-popup" class="popup">
         <div>
-            <button id="add-task-btn">اضافه کردن</button>
+            <h2>کار جدید</h2>
+            <div class="input-div">
+                <label for="new-task-title">عنوان</label>
+                <input type="text" name="" id="new-task-title">
+            </div>
+            <div class="input-div">
+                <label for="new-task-description">توضیحات</label>
+                <textarea id="new-task-description" cols="30" rows="3"></textarea>
+            </div>
+            <div class="button-div">
+                <button id="new-task-popup-cancel">لغو</button>
+                <button id="new-task-popup-add">تایید</button>
+            </div>
         </div>
-    </header>
+    </div>
+    <div class="container">
+        <header>
+            <div>
+                <h1>لیست کارها</h1>
+            </div>
+            <div>
+                <button id="add-task-btn">اضافه کردن</button>
+            </div>
+        </header>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
