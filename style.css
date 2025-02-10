@@ -92,6 +92,11 @@ header {
     border-radius: 0.25rem;
 }
 
+.input-div input {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
 .input-div textarea {
     min-width: 100%;
     max-width: 100%;
@@ -127,7 +132,7 @@ header {
     margin-top: 0.5rem;
 }
 
-#task-list{
+#task-list {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +140,8 @@ header {
     list-style: none;
     padding: 1rem 0.5rem 0.5rem;
 }
-.task{
+
+.task {
     width: 38rem;
     max-width: 85%;
     margin: 0.5rem 0;
@@ -143,22 +149,27 @@ header {
     background: #fff;
     border-radius: 0.5rem;
 }
-.task h2{
+
+.task h2 {
     margin: 0.5rem;
     font-size: 1.30em;
 }
-.task p{
+
+.task p {
     font-size: 0.9em;
 }
-.task-options{
+
+.task-options {
     float: left;
 }
-.task-options button{
+
+.task-options button {
     padding: 0.25rem;
     margin: 0 0.1rem;
     background: none;
 }
-.remove-btn{
+
+.remove-btn {
     color: #b92f2f;
     font-weight: 500;
 }
