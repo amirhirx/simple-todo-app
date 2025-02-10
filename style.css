@@ -150,3 +150,15 @@ header {
 .task p{
     font-size: 0.9em;
 }
+.task-options{
+    float: left;
+}
+.task-options button{
+    padding: 0.25rem;
+    margin: 0 0.1rem;
+    background: none;
+}
+.remove-btn{
+    color: #b92f2f;
+    font-weight: 500;
+}

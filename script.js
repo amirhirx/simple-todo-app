@@ -73,6 +73,22 @@ function renderTasks() {
         let taskElem = $.createElement("li")
         taskElem.classList.add("task")
 
+        let taskOptionsElem = $.createElement("div")
+        taskOptionsElem.classList.add("task-options")
+
+        let taskEditBtn = $.createElement("button")
+        taskEditBtn.classList.add("edit-task")
+        taskEditBtn.innerText = "ویرایش"
+        taskOptionsElem.append(taskEditBtn)
+
+        let taskRemoveBtn = $.createElement("button")
+        taskRemoveBtn.classList.add("remove-btn")
+        taskRemoveBtn.innerText = "حذف"
+
+        taskOptionsElem.append(taskRemoveBtn)
+
+        taskElem.append(taskOptionsElem)
+
         let taskTitleElem = $.createElement("h2")
         taskTitleElem.innerText = task.title
         taskElem.append(taskTitleElem)
