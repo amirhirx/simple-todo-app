@@ -56,6 +56,7 @@ header {
     align-items: center;
     transition: 0.3s all;
     transform: translateY(-100%);
+    z-index: 1;
 }
 
 .popup>div {
@@ -124,4 +125,28 @@ header {
 #message-popup>div button,
 #message-popup>div p {
     margin-top: 0.5rem;
+}
+
+#task-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    padding: 1rem 0.5rem 0.5rem;
+}
+.task{
+    width: 38rem;
+    max-width: 85%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+}
+.task h2{
+    margin: 0.5rem;
+    font-size: 1.30em;
+}
+.task p{
+    font-size: 0.9em;
 }
