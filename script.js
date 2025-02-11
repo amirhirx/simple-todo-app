@@ -43,6 +43,16 @@ newTaskPopupAdd.addEventListener("click", () => {
     renderTasks()
 })
 
+// Add click event for task options elements
+taskList.addEventListener("click", (e) => {
+    let target = e.target.parentNode.parentNode
+    let targetTitle = target.querySelector(".task-title").innerText
+
+    if (e.target.classList.contains("remove-btn")) {
+        removeTask(targetTitle)
+    }
+})
+
 function message(title, text) {
     if (title) {
         messagePopupTitle.innerText = title
@@ -91,13 +101,28 @@ function renderTasks() {
 
         let taskTitleElem = $.createElement("h2")
         taskTitleElem.innerText = task.title
+        taskTitleElem.classList.add("task-title")
         taskElem.append(taskTitleElem)
 
         if (task.description) {
             let taskDescriptionElem = $.createElement("p")
             taskDescriptionElem.innerText = task.description
+            taskDescriptionElem.classList.add("task-description")
             taskElem.append(taskDescriptionElem)
         }
         taskList.append(taskElem)
     })
+}
+
+function removeTask(targetTitle) {
+    let tasks = loadTasks()
+
+    tasks.map((task) => {
+        if (task.title == targetTitle) {
+            tasks.splice(tasks.indexOf(task), 1)
+            localStorage.setItem("tasks", JSON.stringify(tasks))
+        }
+    })
+
+    renderTasks()
 }
