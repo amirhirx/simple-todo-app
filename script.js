@@ -30,6 +30,12 @@ messagePopupBtn.addEventListener("click", () => {
 
 newTaskPopupAdd.addEventListener("click", addTask)
 
+newTaskPopup.addEventListener("keydown", (event)=>{
+    if(event.code == "Enter"){
+        addTask()
+    }
+})
+
 
 // Add click event for task options elements
 taskList.addEventListener("click", (e) => {
@@ -63,7 +69,7 @@ function addTask() {
         title: newTaskTitle.value,
         description: newTaskDescription.value
     }
-    
+
     newTaskTitle.value = ""
     newTaskDescription.value = ""
     tasks.push(newTask)
