@@ -28,20 +28,8 @@ messagePopupBtn.addEventListener("click", () => {
     container.classList.remove("blur")
 })
 
-newTaskPopupAdd.addEventListener("click", () => {
-    let tasks = loadTasks()
-    let newTask = {
-        title: newTaskTitle.value,
-        description: newTaskDescription.value
-    }
-    newTaskTitle.value = ""
-    newTaskDescription.value = ""
-    tasks.push(newTask)
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-    newTaskPopup.classList.remove("show")
-    container.classList.remove("blur")
-    renderTasks()
-})
+newTaskPopupAdd.addEventListener("click", addTask)
+
 
 // Add click event for task options elements
 taskList.addEventListener("click", (e) => {
@@ -67,6 +55,22 @@ function message(title, text) {
     } else {
         console.log("Error!")
     }
+}
+
+function addTask() {
+    let tasks = loadTasks()
+    let newTask = {
+        title: newTaskTitle.value,
+        description: newTaskDescription.value
+    }
+    
+    newTaskTitle.value = ""
+    newTaskDescription.value = ""
+    tasks.push(newTask)
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+    newTaskPopup.classList.remove("show")
+    container.classList.remove("blur")
+    renderTasks()
 }
 
 function loadTasks() {
