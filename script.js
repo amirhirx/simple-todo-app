@@ -10,6 +10,11 @@ const messagePopup = $.getElementById("message-popup")
 const messagePopupTitle = $.getElementById("message-popup-title")
 const messagePopupText = $.getElementById("message-popup-text")
 const messagePopupBtn = $.getElementById("message-popup-btn")
+const editTaskPopup = $.getElementById("edit-task-popup")
+const editTaskTitle = $.getElementById("edit-task-title")
+const editTaskDescription = $.getElementById("edit-task-description")
+const editTaskPopupCancel = $.getElementById("edit-task-popup-cancel")
+const editTaskPopupApply = $.getElementById("edit-task-popup-apply")
 const taskList = $.getElementById("task-list")
 
 $.addEventListener("DOMContentLoaded", renderTasks())
@@ -30,13 +35,39 @@ messagePopupBtn.addEventListener("click", () => {
 
 newTaskPopupAdd.addEventListener("click", addTask)
 
-newTaskPopup.addEventListener("keydown", (event)=>{
-    if(event.code == "Enter"){
+newTaskPopup.addEventListener("keydown", (event) => {
+    if (event.code == "Enter") {
         addTask()
     }
 })
 
+editTaskPopupCancel.addEventListener("click", ()=>{
+    editTaskTitle.value = ""
+    editTaskDescription.value = ""
+    editTaskPopup.classList.remove("show")
+    container.classList.remove("blur")
+})
 
+editTaskPopupApply.addEventListener("click", ()=>{
+    editTask()
+    editTaskTitle.value = ""
+    editTaskDescription.value = ""
+    editTaskPopup.classList.remove("show")
+    container.classList.remove("blur")
+})
+
+editTaskPopup.addEventListener("keydown", (event) => {
+    if (event.code == "Enter") {
+        editTask()
+        editTaskTitle.value = ""
+        editTaskDescription.value = ""
+        editTaskPopup.classList.remove("show")
+        container.classList.remove("blur")
+    }
+})
+
+
+let targetTitleForEdit
 // Add click event for task options elements
 taskList.addEventListener("click", (e) => {
     let target = e.target.parentNode.parentNode
@@ -44,6 +75,18 @@ taskList.addEventListener("click", (e) => {
 
     if (e.target.classList.contains("remove-btn")) {
         removeTask(targetTitle)
+    } else if (e.target.classList.contains("edit-task")) {
+        editTaskPopup.classList.add("show")
+        container.classList.add("blur")
+        targetTitleForEdit = targetTitle
+
+        let tasks = loadTasks()
+        tasks.map((task)=>{
+            if (task.title == targetTitle) {
+                editTaskTitle.value = task.title
+                editTaskDescription.value = task.description
+            }
+        })
     }
 })
 
@@ -135,4 +178,17 @@ function removeTask(targetTitle) {
     })
 
     renderTasks()
+}
+
+function editTask() {
+    let tasks = loadTasks()
+
+    tasks.map((task) => {
+        if (task.title == targetTitleForEdit) {
+            task.title = editTaskTitle.value
+            task.description = editTaskDescription.value
+            localStorage.setItem("tasks", JSON.stringify(tasks))
+            renderTasks()
+        }
+    })
 }

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="message-popup" class="popup">
         <div>
@@ -19,7 +21,7 @@
             <h2>کار جدید</h2>
             <div class="input-div">
                 <label for="new-task-title">عنوان</label>
-                <input type="text" name="" id="new-task-title">
+                <input type="text" id="new-task-title">
             </div>
             <div class="input-div">
                 <label for="new-task-description">توضیحات</label>
@@ -28,6 +30,23 @@
             <div class="button-div">
                 <button id="new-task-popup-cancel">لغو</button>
                 <button id="new-task-popup-add">تایید</button>
+            </div>
+        </div>
+    </div>
+    <div id="edit-task-popup" class="popup">
+        <div>
+            <h2>ویرایش کار</h2>
+            <div class="input-div">
+                <label for="edit-task-title">عنوان</label>
+                <input type="text" id="edit-task-title">
+            </div>
+            <div class="input-div">
+                <label for="edit-task-description">توضیحات</label>
+                <textarea id="edit-task-description" cols="30" rows="3"></textarea>
+            </div>
+            <div class="button-div">
+                <button id="edit-task-popup-cancel">لغو</button>
+                <button id="edit-task-popup-apply">تایید</button>
             </div>
         </div>
     </div>
@@ -55,4 +74,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
