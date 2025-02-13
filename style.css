@@ -5,6 +5,11 @@
     font-family: vazirmatn, sans-serif;
 }
 
+@font-face {
+    font-family: vazirmatn;
+    src: url("./assets/fonts/Vazirmatn-RD[wght].woff2");
+}
+
 body {
     direction: rtl;
     background: #ededed;
