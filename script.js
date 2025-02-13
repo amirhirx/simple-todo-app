@@ -22,6 +22,7 @@ $.addEventListener("DOMContentLoaded", renderTasks())
 addTaskButton.addEventListener("click", () => {
     newTaskPopup.classList.add("show")
     container.classList.add("blur")
+    newTaskTitle.focus()
 })
 newTaskPopupCancel.addEventListener("click", () => {
     newTaskPopup.classList.remove("show")
