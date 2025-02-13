@@ -42,14 +42,14 @@ newTaskPopup.addEventListener("keydown", (event) => {
     }
 })
 
-editTaskPopupCancel.addEventListener("click", ()=>{
+editTaskPopupCancel.addEventListener("click", () => {
     editTaskTitle.value = ""
     editTaskDescription.value = ""
     editTaskPopup.classList.remove("show")
     container.classList.remove("blur")
 })
 
-editTaskPopupApply.addEventListener("click", ()=>{
+editTaskPopupApply.addEventListener("click", () => {
     editTask()
     editTaskTitle.value = ""
     editTaskDescription.value = ""
@@ -82,7 +82,7 @@ taskList.addEventListener("click", (e) => {
         targetTitleForEdit = targetTitle
 
         let tasks = loadTasks()
-        tasks.map((task)=>{
+        tasks.map((task) => {
             if (task.title == targetTitle) {
                 editTaskTitle.value = task.title
                 editTaskDescription.value = task.description
@@ -116,11 +116,17 @@ function addTask() {
 
     newTaskTitle.value = ""
     newTaskDescription.value = ""
-    tasks.push(newTask)
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-    newTaskPopup.classList.remove("show")
-    container.classList.remove("blur")
-    renderTasks()
+    if (newTask.title) {
+        tasks.push(newTask)
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+        newTaskPopup.classList.remove("show")
+        container.classList.remove("blur")
+        renderTasks()
+    } else {
+        newTaskPopup.classList.remove("show")
+        container.classList.remove("blur")
+        message("عنوان را وارد نکردید", "عنوان را باید وارد کنید")
+    }
 }
 
 function loadTasks() {
@@ -186,10 +192,17 @@ function editTask() {
 
     tasks.map((task) => {
         if (task.title == targetTitleForEdit) {
-            task.title = editTaskTitle.value
-            task.description = editTaskDescription.value
-            localStorage.setItem("tasks", JSON.stringify(tasks))
-            renderTasks()
+            if (editTaskTitle.value) {
+                task.title = editTaskTitle.value
+                task.description = editTaskDescription.value
+                localStorage.setItem("tasks", JSON.stringify(tasks))
+                renderTasks()
+            }
+            else {
+                editTaskPopup.classList.remove("show")
+                container.classList.remove("blur")
+                message("خطا در هنگام ویرایش", "عنوان کار را وارد کنید")
+            }
         }
     })
 }
