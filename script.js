@@ -67,7 +67,6 @@ editTaskPopup.addEventListener("keydown", (event) => {
     }
 })
 
-
 let targetTitleForEdit
 // Add click event for task options elements
 taskList.addEventListener("click", (e) => {
@@ -101,7 +100,6 @@ function message(title, text) {
         }
         messagePopup.classList.add("show")
         container.classList.add("blur")
-
     } else {
         console.log("Error!")
     }
@@ -111,7 +109,7 @@ function addTask() {
     let tasks = loadTasks()
     let newTask = {
         title: newTaskTitle.value,
-        description: newTaskDescription.value
+        description: newTaskDescription.value,
     }
 
     newTaskTitle.value = ""
@@ -146,15 +144,12 @@ function renderTasks() {
         let taskOptionsElem = $.createElement("div")
         taskOptionsElem.classList.add("task-options")
 
-        let taskEditBtn = $.createElement("button")
-        taskEditBtn.classList.add("edit-task")
-        taskEditBtn.innerText = "ویرایش"
+        let taskEditBtn = $.createElement("li")
+        taskEditBtn.classList = "fa fa-pen edit-task"
         taskOptionsElem.append(taskEditBtn)
 
-        let taskRemoveBtn = $.createElement("button")
-        taskRemoveBtn.classList.add("remove-btn")
-        taskRemoveBtn.innerText = "حذف"
-
+        let taskRemoveBtn = $.createElement("li")
+        taskRemoveBtn.classList = "fa fa-trash remove-btn"
         taskOptionsElem.append(taskRemoveBtn)
 
         taskElem.append(taskOptionsElem)
@@ -197,8 +192,7 @@ function editTask() {
                 task.description = editTaskDescription.value
                 localStorage.setItem("tasks", JSON.stringify(tasks))
                 renderTasks()
-            }
-            else {
+            } else {
                 editTaskPopup.classList.remove("show")
                 container.classList.remove("blur")
                 message("خطا در هنگام ویرایش", "عنوان کار را وارد کنید")

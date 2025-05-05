@@ -66,7 +66,7 @@ header {
     scale: 0.5;
 }
 
-.popup>div {
+.popup > div {
     width: 28rem;
     max-width: 80%;
     padding: 1rem;
@@ -74,7 +74,7 @@ header {
     border-radius: 0.5rem;
 }
 
-.popup>div h2 {
+.popup > div h2 {
     text-align: center;
     font-weight: 800;
 }
@@ -123,19 +123,19 @@ header {
 }
 
 /* Message popup styles */
-#message-popup>div {
+#message-popup > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#message-popup>div h2 {
+#message-popup > div h2 {
     text-align: right;
 }
 
-#message-popup>div button,
-#message-popup>div p {
+#message-popup > div button,
+#message-popup > div p {
     margin-top: 0.5rem;
 }
 
@@ -159,7 +159,7 @@ header {
 
 .task h2 {
     margin: 0.5rem;
-    font-size: 1.30em;
+    font-size: 1.3em;
 }
 
 .task p {
@@ -168,15 +168,11 @@ header {
 
 .task-options {
     float: left;
-}
-
-.task-options button {
     padding: 0.25rem;
-    margin: 0 0.1rem;
-    background: none;
 }
 
-.remove-btn {
-    color: #b92f2f;
-    font-weight: 500;
+.task-options li {
+    padding: 0.25rem;
+    margin: 0 0.3rem;
+    font-size: 0.9em;
 }
